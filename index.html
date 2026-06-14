@@ -3,231 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nu3AmD Studio (Single Page)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <title>Numan Shaikh | Mechanical Engineer Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #E3FDFD;
-      color: #222;
       margin: 0;
-      padding: 0;
+      background: #eef6f7;
+      color: #222;
       scroll-behavior: smooth;
     }
-    .header, .section, .footer {
+
+    header {
+      background: linear-gradient(135deg, #dff6ff, #cfefff);
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
-    .header {
-      background: linear-gradient(135deg, #CBF1F5, #E3FDFD);
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
     }
-    .logo-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .cards {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
-    .logo-title .nu, .logo-title .am {
-      color: #1a1a1a;
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 260px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
-    .logo-title .filament, .logo-title .blue-d {
-      color: #007BFF;
+
+    .card:hover {
+      transform: translateY(-5px);
     }
-    .rotating-cube {
-      animation: spin 10s linear infinite;
-      width: 48px;
-      height: 48px;
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .cta {
+
+    .btn {
       display: inline-block;
-      padding: 15px 30px;
-      background-color: #71C9CE;
-      color: #fff;
-      font-weight: bold;
+      margin: 10px 8px;
+      padding: 12px 20px;
+      background: #0099cc;
+      color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: background 0.3s, transform 0.2s;
+      border: none;
+      font-weight: 600;
+      transition: 0.3s;
     }
-    .cta:hover {
-      background-color: #5bbcc2;
+
+    .btn:hover {
+      background: #0077aa;
       transform: translateY(-2px);
     }
-    .services, .project-gallery {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 30px;
-    }
-    .service-card, .project-item {
-      flex: 1 1 250px;
-      margin: 10px;
-      padding: 20px;
-      background-color: #A6E3E9;
-      border-radius: 8px;
-      box-shadow: 0px 4px 15px rgba(0,0,0,.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: default;
-    }
-    .service-card:hover, .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 8px 20px rgba(0,0,0,.15);
-    }
-    .footer {
-      background-color: #71C9CE;
-      color: #f9fafb;
-      font-weight: 600;
-    }
-    .hidden { display: none; }
-    .project-item img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    @media (max-width: 768px) {
-      .services, .project-gallery {
-        flex-direction: column;
-        align-items: center;
-      }
-      .logo-title { font-size: 2.5rem; }
-    }
-    /* Contact Form */
+
     form input, form textarea {
       width: 90%;
       max-width: 400px;
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 5px;
+      padding: 10px;
+      margin: 8px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      font-family: 'Poppins', sans-serif;
     }
-    button[type="submit"] { margin-top: 10px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0099cc;
+      color: white;
+    }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Home Page -->
-  <div id="home-section">
-    <header class="header">
-      <h1 class="logo-title">
-        <svg class="rotating-cube" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" fill="#007BFF" stroke="#1a1a1a" stroke-width="2"/>
-          <line x1="50" y1="15" x2="50" y2="95" stroke="#1a1a1a" stroke-width="2"/>
-          <line x1="15" y1="35" x2="85" y2="35" stroke="#1a1a1a" stroke-width="2"/>
-          <line x1="15" y1="75" x2="85" y2="75" stroke="#1a1a1a" stroke-width="2"/>
-        </svg>
-        <span class="nu">Nu</span><span class="filament">3</span><span class="am">Am</span><span class="blue-d">D</span>
-      </h1>
-      <p>Bringing Ideas to Life, One Layer at a Time</p>
-      <a href="#services" class="cta">Explore Our Services</a>
-    </header>
+<!-- HOME -->
+<div id="home">
 
-    <section id="services" class="services">
-      <div class="service-card" data-aos="fade-up">
-        <h3>3D Printing Services</h3>
-        <p>High precision printing for entrepreneurs, creators, and engineers.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>Custom Designs</h3>
-        <p>Tailored design services for rapid prototyping and manufacturing needs.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="cta" onclick="showProjects()">Our Projects & Designed Models</h3>
-        <p>Showcasing innovation, precision, and craftsmanship. Click to explore more projects!</p>
-      </div>
-    </section>
+<header>
+  <h1>Numan Shaikh</h1>
+  <p class="tagline">Mechanical Engineering Student | EV Systems | CAD Design | Prototyping</p>
+  <p>Building real-world engineering solutions in electric mobility and mechanical design.</p>
 
-    <!-- Contact Form -->
-    <section id="contact" class="section">
-      <h2>Contact Us</h2>
-      <form id="contactForm">
-        <input type="text" name="from_name" placeholder="Your Name" required><br>
-        <input type="email" name="from_email" placeholder="Your Email" required><br>
-        <input type="text" name="contact_number" placeholder="Your Contact Number" required><br>
-        <textarea name="message" placeholder="Your Message" required></textarea><br>
-        <button type="submit" class="cta">Send Message</button>
-      </form>
-    </section>
+  <!-- RESUME BUTTON -->
+  <a href="resume.pdf" download class="btn">📄 Download Resume</a>
+  <button class="btn" onclick="showContact()">Contact Me</button>
+</header>
+
+<section class="section" data-aos="fade-up">
+  <h2>About Me</h2>
+  <p>
+    I am a 8th semester Mechanical Engineering student with CGPA 7.76.
+    I have completed a 15-week internship at Vision Astraa EV Academy.
+    I specialize in EV systems, CAD design, and mechanical prototyping.
+  </p>
+</section>
+
+<section class="section" data-aos="fade-up">
+  <h2>Skills</h2>
+  <div class="cards">
+    <div class="card">CAD Design (3DEXPERIENCE / SolidWorks)</div>
+    <div class="card">MATLAB Basics</div>
+    <div class="card">EV Systems</div>
+    <div class="card">Mechanical Design</div>
   </div>
+</section>
 
-  <!-- Project Page -->
-  <div id="projects-section" class="hidden">
-    <header class="header">
-      <h1>Future Projects</h1>
-      <p>Here’s a glimpse at what’s coming soon. Stay tuned for our innovative 3D printed creations.</p>
-      <span class="cta" onclick="showHome()">← Back to Home</span>
-    </header>
+<section class="section" data-aos="fade-up">
+  <h2>Projects</h2>
+  <div class="cards">
 
-    <section class="project-gallery">
-      <div class="project-item" data-aos="fade-up">
-        <img src="project1.jpg" alt="Future Project 1 Placeholder">
-        <h3>Future Project 1</h3>
-        <p>Description placeholder for a future 3D printed model. Replace with your project details.</p>
-      </div>
-      <div class="project-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="project2.jpg" alt="Future Project 2 Placeholder">
-        <h3>Future Project 2</h3>
-        <p>Description placeholder for a future 3D printed model. Replace with your project details.</p>
-      </div>
-      <div class="project-item" data-aos="fade-up" data-aos-delay="200">
-        <img src="project3.jpg" alt="Future Project 3 Placeholder">
-        <h3>Future Project 3</h3>
-        <p>Description placeholder for a future 3D printed model. Replace with your project details.</p>
-      </div>
-    </section>
+    <div class="card">
+      <h3>Smart EV Charging Station</h3>
+      <p>Solar + wireless EV charging concept system design.</p>
+    </div>
+
+    <div class="card">
+      <h3>Multi-Terrain RC Vehicle</h3>
+      <p>All-terrain RC vehicle capable of rough surface mobility.</p>
+    </div>
+
+    <div class="card">
+      <h3>Radial Drilling Machine</h3>
+      <p>Multi-direction drilling machine conceptual design.</p>
+    </div>
+
   </div>
+</section>
 
-  <footer class="footer">
-    <p>&copy; 2024 Nu3AmD Studio | "Design. Print. Build."</p>
-  </footer>
+</div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
+<!-- CONTACT -->
+<div id="contact" class="hidden">
 
-    function showProjects() {
-      document.getElementById("home-section").classList.add("hidden");
-      document.getElementById("projects-section").classList.remove("hidden");
-      window.scrollTo(0, 0);
-    }
+<section class="section">
+  <h2>Contact Me</h2>
 
-    function showHome() {
-      document.getElementById("projects-section").classList.add("hidden");
-      document.getElementById("home-section").classList.remove("hidden");
-      window.scrollTo(0, 0);
-    }
+  <form id="contactForm">
+    <input type="text" name="from_name" placeholder="Your Name" required><br>
+    <input type="email" name="from_email" placeholder="Your Email" required><br>
+    <input type="text" name="contact_number" placeholder="Phone Number" required><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br>
 
-    // Initialize EmailJS
-    emailjs.init("ZRva-8Q4H3gB7YFWU"); // Your Public Key
+    <button class="btn" type="submit">Send Message</button>
+  </form>
 
-    // Contact Form Script with Popup Alerts
+  <br>
+  <button class="btn" onclick="showHome()">Back</button>
+</section>
+
+</div>
+
+<footer>
+  © 2026 Numan Shaikh | Mechanical Engineer Portfolio
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  AOS.init();
+
+  function showContact() {
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("contact").classList.remove("hidden");
+  }
+
+  function showHome() {
+    document.getElementById("contact").classList.add("hidden");
+    document.getElementById("home").classList.remove("hidden");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    emailjs.init("ZRva-8Q4H3gB7YFWU");
+
     document.getElementById("contactForm").addEventListener("submit", function(e){
       e.preventDefault();
-      const form = this;
 
-      emailjs.sendForm("service_w43bvkt", "template_gsti3dw", form)
-        .then(function() {
-          alert("✅ Message sent successfully!");
-          form.reset();
-        }, function(error) {
-          console.error("EmailJS error:", error);
-          alert("❌ Failed to send. Please try again.");
+      emailjs.sendForm("service_w43bvkt", "template_gsti3dw", this)
+        .then(() => {
+          alert("Message sent successfully!");
+          this.reset();
+          showHome();
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Failed to send message.");
         });
     });
-  </script>
+
+  });
+</script>
+
 </body>
 </html>
