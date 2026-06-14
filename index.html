@@ -1,102 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Numan Shaikh | Mechanical Engineer Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Numan Shaikh | Mechanical Engineer Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #eef6f7;
-      color: #222;
-      scroll-behavior: smooth;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Poppins;
+  background:#eef6f7;
+  color:#222;
+}
 
-    header {
-      background: linear-gradient(135deg, #dff6ff, #cfefff);
-      text-align: center;
-      padding: 60px 20px;
-    }
+header{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#dff6ff,#cfefff);
+}
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
+h1{font-size:2.8rem;margin:0}
+.tagline{color:#444;font-size:1.1rem}
 
-    .tagline {
-      font-size: 1.2rem;
-      color: #444;
-    }
+.btn{
+  display:inline-block;
+  margin:10px 8px;
+  padding:12px 20px;
+  background:#0099cc;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    .section {
-      padding: 50px 20px;
-      text-align: center;
-    }
+.btn:hover{background:#0077aa}
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+.section{
+  padding:50px 20px;
+  text-align:center;
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      width: 260px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.card{
+  background:#fff;
+  width:280px;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-    .btn {
-      display: inline-block;
-      margin: 10px 8px;
-      padding: 12px 20px;
-      background: #0099cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      cursor: pointer;
-      border: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:8px;
+}
 
-    .btn:hover {
-      background: #0077aa;
-      transform: translateY(-2px);
-    }
+.hidden{display:none}
 
-    form input, form textarea {
-      width: 90%;
-      max-width: 400px;
-      padding: 10px;
-      margin: 8px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0099cc;
-      color: white;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0099cc;
+  color:#fff;
+}
+</style>
 </head>
 
 <body>
@@ -107,52 +86,109 @@
 <header>
   <h1>Numan Shaikh</h1>
   <p class="tagline">Mechanical Engineering Student | EV Systems | CAD Design | Prototyping</p>
-  <p>Building real-world engineering solutions in electric mobility and mechanical design.</p>
+  <p>Building real-world engineering solutions in EV and mechanical systems.</p>
 
-  <!-- RESUME BUTTON -->
   <a href="resume.pdf" download class="btn">📄 Download Resume</a>
-  <button class="btn" onclick="showContact()">Contact Me</button>
+  <button class="btn" onclick="showProjects()">View Projects</button>
+  <button class="btn" onclick="showContact()">Contact</button>
 </header>
 
-<section class="section" data-aos="fade-up">
+<!-- ABOUT -->
+<section class="section">
   <h2>About Me</h2>
   <p>
-    I am a 8th semester Mechanical Engineering student with CGPA 7.76.
-    I have completed a 15-week internship at Vision Astraa EV Academy.
-    I specialize in EV systems, CAD design, and mechanical prototyping.
+    8th semester Mechanical Engineering student with CGPA 7.76.
+    Internship at Vision Astraa EV Academy.
+    Interested in EV systems, CAD design, and prototyping.
   </p>
 </section>
 
-<section class="section" data-aos="fade-up">
+<!-- SKILLS -->
+<section class="section">
   <h2>Skills</h2>
   <div class="cards">
-    <div class="card">CAD Design (3DEXPERIENCE / SolidWorks)</div>
+    <div class="card">CAD Design (3DEXPERIENCE)</div>
     <div class="card">MATLAB Basics</div>
     <div class="card">EV Systems</div>
     <div class="card">Mechanical Design</div>
   </div>
 </section>
 
-<section class="section" data-aos="fade-up">
-  <h2>Projects</h2>
-  <div class="cards">
+</div>
 
-    <div class="card">
-      <h3>Smart EV Charging Station</h3>
-      <p>Solar + wireless EV charging concept system design.</p>
-    </div>
+<!-- PROJECTS -->
+<div id="projects" class="hidden">
 
-    <div class="card">
-      <h3>Multi-Terrain RC Vehicle</h3>
-      <p>All-terrain RC vehicle capable of rough surface mobility.</p>
-    </div>
+<header>
+  <h1>My Projects</h1>
+  <button class="btn" onclick="showHome()">← Back</button>
+</header>
 
-    <div class="card">
-      <h3>Radial Drilling Machine</h3>
-      <p>Multi-direction drilling machine conceptual design.</p>
-    </div>
+<section class="section">
 
-  </div>
+<div class="cards">
+
+<!-- 1 ROBOT WRIST -->
+<div class="card">
+  <img src="robot_wrist/robot_wrist_1.png">
+  <img src="robot_wrist/robot_wrist_2.png">
+  <img src="robot_wrist/robot_wrist_3.png">
+  <h3>Robot Wrist</h3>
+  <p>Mechanical wrist mechanism design for controlled motion.</p>
+  <a class="btn" href="robot_wrist/robot_wrist.f3d" download>Download F3D</a>
+</div>
+
+<!-- 2 WATER SENSOR -->
+<div class="card">
+  <img src="water_sensor/water_sensor_1.png">
+  <img src="water_sensor/water_sensor_2.png">
+  <img src="water_sensor/water_sensor_3.png">
+  <h3>Water Sensor</h3>
+  <p>Detection system for water level monitoring applications.</p>
+  <a class="btn" href="water_sensor/water_sensor.f3d" download>Download F3D</a>
+</div>
+
+<!-- 3 IC ENGINE -->
+<div class="card">
+  <img src="ic_engine/ic_engine_1.png">
+  <img src="ic_engine/ic_engine_2.png">
+  <img src="ic_engine/ic_engine_3.png">
+  <h3>IC Engine</h3>
+  <p>Engine mechanism study and working model design.</p>
+  <a class="btn" href="ic_engine/ic_engine.f3d" download>Download F3D</a>
+</div>
+
+<!-- 4 REMOTE HOLDER -->
+<div class="card">
+  <img src="remote_holder/remote_holder_1.png">
+  <img src="remote_holder/remote_holder_2.png">
+  <img src="remote_holder/remote_holder_3.png">
+  <h3>Remote Holder</h3>
+  <p>Ergonomic design for home organization system.</p>
+  <a class="btn" href="remote_holder/remote_holder.f3d" download>Download F3D</a>
+</div>
+
+<!-- 5 HEAD MASSAGER -->
+<div class="card">
+  <img src="head_massager/head_massager_1.png">
+  <img src="head_massager/head_massager_2.png">
+  <img src="head_massager/head_massager_3.png">
+  <h3>Head Massager</h3>
+  <p>Mechanical stress relief device design.</p>
+  <a class="btn" href="head_massager/head_massager.f3d" download>Download F3D</a>
+</div>
+
+<!-- 6 FOLDABLE STOOL -->
+<div class="card">
+  <img src="foldable_stool/foldable_stool_1.png">
+  <img src="foldable_stool/foldable_stool_2.png">
+  <img src="foldable_stool/foldable_stool_3.png">
+  <h3>Foldable Stool</h3>
+  <p>Portable folding mechanism for compact storage.</p>
+  <a class="btn" href="foldable_stool/foldable_stool.f3d" download>Download F3D</a>
+</div>
+
+</div>
 </section>
 
 </div>
@@ -160,64 +196,45 @@
 <!-- CONTACT -->
 <div id="contact" class="hidden">
 
-<section class="section">
-  <h2>Contact Me</h2>
-
-  <form id="contactForm">
-    <input type="text" name="from_name" placeholder="Your Name" required><br>
-    <input type="email" name="from_email" placeholder="Your Email" required><br>
-    <input type="text" name="contact_number" placeholder="Phone Number" required><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br>
-
-    <button class="btn" type="submit">Send Message</button>
-  </form>
-
-  <br>
+<header>
+  <h1>Contact Me</h1>
   <button class="btn" onclick="showHome()">Back</button>
+</header>
+
+<section class="section">
+
+<form id="contactForm">
+  <input type="text" name="from_name" placeholder="Name" required><br><br>
+  <input type="email" name="from_email" placeholder="Email" required><br><br>
+  <input type="text" name="contact_number" placeholder="Phone"><br><br>
+  <textarea name="message" placeholder="Message" required></textarea><br><br>
+  <button class="btn" type="submit">Send</button>
+</form>
+
 </section>
 
 </div>
 
 <footer>
-  © 2026 Numan Shaikh | Mechanical Engineer Portfolio
+© 2026 Numan Shaikh | Mechanical Engineer Portfolio
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
 <script>
-  AOS.init();
+function showProjects(){
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("projects").classList.remove("hidden");
+}
 
-  function showContact() {
-    document.getElementById("home").classList.add("hidden");
-    document.getElementById("contact").classList.remove("hidden");
-  }
+function showHome(){
+  document.getElementById("projects").classList.add("hidden");
+  document.getElementById("contact").classList.add("hidden");
+  document.getElementById("home").classList.remove("hidden");
+}
 
-  function showHome() {
-    document.getElementById("contact").classList.add("hidden");
-    document.getElementById("home").classList.remove("hidden");
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-
-    emailjs.init("ZRva-8Q4H3gB7YFWU");
-
-    document.getElementById("contactForm").addEventListener("submit", function(e){
-      e.preventDefault();
-
-      emailjs.sendForm("service_w43bvkt", "template_gsti3dw", this)
-        .then(() => {
-          alert("Message sent successfully!");
-          this.reset();
-          showHome();
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Failed to send message.");
-        });
-    });
-
-  });
+function showContact(){
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("contact").classList.remove("hidden");
+}
 </script>
 
 </body>
