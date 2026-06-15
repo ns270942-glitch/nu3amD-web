@@ -148,3 +148,361 @@
     </script>
 </body>
 </html>
+<!-- PROJECTS -->
+
+<div id="projects" class="hidden">
+
+<header>
+
+<h1>My Projects</h1>
+
+<button class="btn" onclick="showHome()">
+← Back
+</button>
+
+</header>
+
+<section class="section">
+
+<div class="cards">
+
+<!-- ROBOT WRIST -->
+
+<div class="card">
+
+<img src="robot_wrist/robot_wrist_1.png" onclick="openImage(this)">
+<img src="robot_wrist/robot_wrist_2.png" onclick="openImage(this)">
+<img src="robot_wrist/robot_wrist_3.png" onclick="openImage(this)">
+
+<h3>Robot Wrist</h3>
+
+<p>
+Mechanical wrist mechanism designed for controlled movement and robotic applications.
+</p>
+
+<a class="btn"
+href="robot_wrist/robot_wrist.f3d"
+download>
+Download F3D
+</a>
+
+</div>
+
+<!-- WATER SENSOR -->
+
+<div class="card">
+
+<img src="water_sensor/water_sensor_1.png" onclick="openImage(this)">
+<img src="water_sensor/water_sensor_2.png" onclick="openImage(this)">
+<img src="water_sensor/water_sensor_3.png" onclick="openImage(this)">
+
+<h3>Water Sensor</h3>
+
+<p>
+Water level detection system used for monitoring and automation applications.
+</p>
+
+<a class="btn"
+href="water_sensor/water_sensor.f3d"
+download>
+Download F3D
+</a>
+
+</div>
+
+<!-- IC ENGINE -->
+
+<div class="card">
+
+<img src="ic_engine/ic_engine_1.png" onclick="openImage(this)">
+<img src="ic_engine/ic_engine_2.png" onclick="openImage(this)">
+<img src="ic_engine/ic_engine_3.png" onclick="openImage(this)">
+
+<h3>IC Engine</h3>
+
+<p>
+Detailed CAD model of an internal combustion engine for learning and analysis.
+</p>
+
+<a class="btn"
+href="ic_engine/ic_engine.f3d"
+download>
+Download F3D
+</a>
+
+</div>
+
+<!-- REMOTE HOLDER -->
+
+<div class="card">
+
+<img src="remote_holder/remote_holder_1.png" onclick="openImage(this)">
+<img src="remote_holder/remote_holder_2.png" onclick="openImage(this)">
+<img src="remote_holder/remote_holder_3.png" onclick="openImage(this)">
+
+<h3>Remote Holder</h3>
+
+<p>
+Compact and ergonomic holder designed for organizing TV and AC remotes.
+</p>
+
+<a class="btn"
+href="remote_holder/remote_holder.f3d"
+download>
+Download F3D
+</a>
+
+</div>
+
+<!-- HEAD MASSAGER -->
+
+<div class="card">
+
+<img src="head_massager/head_massager_1.png" onclick="openImage(this)">
+<img src="head_massager/head_massager_2.png" onclick="openImage(this)">
+<img src="head_massager/head_massager_3.png" onclick="openImage(this)">
+
+<h3>Head Massager</h3>
+
+<p>
+Mechanical head massage device developed for relaxation and stress relief.
+</p>
+
+<a class="btn"
+href="head_massager/head_massager.f3z"
+download>
+Download F3Z
+</a>
+
+</div>
+
+<!-- FOLDABLE STOOL -->
+
+<div class="card">
+
+<img src="foldable_stool/foldable_stool_1.png" onclick="openImage(this)">
+<img src="foldable_stool/foldable_stool_2.png" onclick="openImage(this)">
+<img src="foldable_stool/foldable_stool_3.png" onclick="openImage(this)">
+
+<h3>Foldable Stool</h3>
+
+<p>
+Portable foldable stool featuring a compact and lightweight design.
+</p>
+
+<a class="btn"
+href="foldable_stool/foldable_stool.f3d"
+download>
+Download F3D
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+<!-- CONTACT -->
+
+<div id="contact" class="hidden">
+
+<header>
+
+<h1>Contact Me</h1>
+
+<button class="btn" onclick="showHome()">
+← Back
+</button>
+
+</header>
+
+<section class="section">
+
+<form id="contactForm">
+
+<input
+type="text"
+name="from_name"
+placeholder="Your Name"
+required>
+
+<br><br>
+
+<input
+type="email"
+name="from_email"
+placeholder="Your Email"
+required>
+
+<br><br>
+
+<input
+type="text"
+name="contact_number"
+placeholder="Phone Number">
+
+<br><br>
+
+<textarea
+name="message"
+placeholder="Your Message"
+required
+style="width:300px;height:120px;padding:10px;"></textarea>
+
+<br><br>
+
+<button class="btn" type="submit">
+Send Message
+</button>
+
+</form>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 Numan Shaikh | Mechanical Engineer Portfolio
+</footer>
+
+<!-- IMAGE PREVIEW MODAL -->
+
+<div id="imageModal">
+
+<span class="closeBtn"
+onclick="closeImage()">
+&times;
+</span>
+
+<img id="modalImg" src="">
+
+</div>
+
+<!-- EMAILJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+
+emailjs.init("ZRva-8Q4H3gB7YFWU");
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+"service_w43bvkt",
+"template_gsti3dw",
+this
+)
+
+.then(function(){
+
+alert("✅ Message sent successfully!");
+
+form.reset();
+
+})
+
+.catch(function(error){
+
+console.error(error);
+
+alert("❌ Failed to send message.");
+
+});
+
+});
+
+});
+
+</script>
+<script>
+
+/* NAVIGATION */
+
+function showProjects(){
+
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("contact").classList.add("hidden");
+
+    document.getElementById("projects").classList.remove("hidden");
+
+    window.scrollTo(0,0);
+}
+
+function showContact(){
+
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("projects").classList.add("hidden");
+
+    document.getElementById("contact").classList.remove("hidden");
+
+    window.scrollTo(0,0);
+}
+
+function showHome(){
+
+    document.getElementById("projects").classList.add("hidden");
+    document.getElementById("contact").classList.add("hidden");
+
+    document.getElementById("home").classList.remove("hidden");
+
+    window.scrollTo(0,0);
+}
+
+
+/* IMAGE PREVIEW */
+
+function openImage(img){
+
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+}
+
+
+/* CLOSE IMAGE */
+
+function closeImage(){
+
+    document.getElementById("imageModal").style.display = "none";
+    document.getElementById("modalImg").src = "";
+}
+
+
+/* ESC KEY SUPPORT */
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        closeImage();
+
+    }
+
+});
+
+
+/* CLICK OUTSIDE IMAGE TO CLOSE */
+
+document.getElementById("imageModal").addEventListener("click", function(e){
+
+    if(e.target === this){
+
+        closeImage();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
