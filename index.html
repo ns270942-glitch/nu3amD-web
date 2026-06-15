@@ -131,7 +131,7 @@
         <img id="modalImg" src="">
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    
     <script>
         function showProjects(){ document.getElementById("home").classList.add("hidden"); document.getElementById("projects").classList.remove("hidden"); }
         function showHome(){ document.getElementById("projects").classList.add("hidden"); document.getElementById("contact").classList.add("hidden"); document.getElementById("home").classList.remove("hidden"); }
@@ -390,9 +390,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
 const form = document.getElementById("contactForm");
 
+let sending = false;
+
 form.addEventListener("submit", function(e){
 
 e.preventDefault();
+
+if(sending) return;
+
+sending = true;
 
 emailjs.sendForm(
 "service_w43bvkt",
@@ -406,6 +412,8 @@ alert("✅ Message sent successfully!");
 
 form.reset();
 
+sending = false;
+
 })
 
 .catch(function(error){
@@ -413,6 +421,8 @@ form.reset();
 console.error(error);
 
 alert("❌ Failed to send message.");
+
+sending = false;
 
 });
 
